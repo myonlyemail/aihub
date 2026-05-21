@@ -57,6 +57,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Fix mvnw permissions
+        run: chmod +x mvnw
+
       - name: Build with Maven (compile + test)
         run: ./mvnw verify -pl ai-common,ai-gateway,ai-auth-service,ai-user-service,ai-image-service,ai-video-service,ai-payment-service,ai-admin-service -am -DskipITs
 
@@ -85,6 +88,9 @@ jobs:
           java-version: 17
           distribution: 'temurin'
           cache: 'maven'
+
+      - name: Fix mvnw permissions
+        run: chmod +x mvnw
 
       - name: Package all modules
         run: ./mvnw package -DskipTests -DskipITs
