@@ -43,6 +43,12 @@ public class ProviderRouter {
     public List<String> getAvailableModels() {
         return List.of("gpt-4o", "gpt-4o-mini", "gpt-4-turbo",
                 "claude-3-opus", "claude-3-sonnet", "claude-3-haiku",
-                "deepseek-chat", "deepseek-reasoner");
+                "deepseek-chat", "deepseek-reasoner",
+                "qwen-turbo", "qwen-plus", "qwen-max",
+                "glm-4", "glm-4-flash",
+                "moonshot-v1-8k", "moonshot-v1-32k",
+                "doubao-lite-32k", "doubao-pro-128k",
+                "gemini-2.0-flash", "gemini-1.5-pro",
+                "ernie-4.0-8k", "ernie-3.5-8k", "ernie-speed-8k");
     }
 }

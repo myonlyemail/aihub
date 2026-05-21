@@ -55,6 +55,25 @@ aihub:
     deepseek:
       api-key: ${DEEPSEEK_API_KEY:}
       base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
+    qwen:
+      api-key: ${QWEN_API_KEY:}
+      base-url: ${QWEN_BASE_URL:https://dashscope.aliyuncs.com}
+    glm:
+      api-key: ${GLM_API_KEY:}
+      base-url: ${GLM_BASE_URL:https://open.bigmodel.cn}
+    moonshot:
+      api-key: ${MOONSHOT_API_KEY:}
+      base-url: ${MOONSHOT_BASE_URL:https://api.moonshot.cn}
+    doubao:
+      api-key: ${DOUBAO_API_KEY:}
+      base-url: ${DOUBAO_BASE_URL:https://ark.cn-beijing.volces.com}
+    gemini:
+      api-key: ${GEMINI_API_KEY:}
+      base-url: ${GEMINI_BASE_URL:https://generativelanguage.googleapis.com}
+    wenxin:
+      api-key: ${WENXIN_API_KEY:}
+      secret-key: ${WENXIN_SECRET_KEY:}
+      base-url: ${WENXIN_BASE_URL:https://aip.baidubce.com}
 
 logging:
   level:

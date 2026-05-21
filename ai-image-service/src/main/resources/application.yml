@@ -59,3 +59,6 @@ aihub:
     flux:
       api-key: ${FLUX_API_KEY:}
       base-url: ${FLUX_BASE_URL:https://api.bfl.ml}
+    wanxiang:
+      api-key: ${WANXIANG_API_KEY:}
+      base-url: ${WANXIANG_BASE_URL:https://dashscope.aliyuncs.com}

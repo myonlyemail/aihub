@@ -58,3 +58,6 @@ aihub:
     hailuo:
       api-key: ${HAILUO_API_KEY:}
       base-url: ${HAILUO_BASE_URL:https://api.minimax.chat}
+    jimeng:
+      api-key: ${JIMENG_API_KEY:}
+      base-url: ${JIMENG_BASE_URL:https://ark.cn-beijing.volces.com}
