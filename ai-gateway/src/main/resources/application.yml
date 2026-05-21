@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ai-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: auth-service
+          uri: lb://ai-auth-service
+          predicates:
+            - Path=/api/auth/**
+        - id: user-service
+          uri: lb://ai-user-service
+          predicates:
+            - Path=/api/user/**
+        - id: chat-service
+          uri: lb://ai-chat-service
+          predicates:
+            - Path=/api/chat/**,/api/ai/chat/**
+        - id: image-service
+          uri: lb://ai-image-service
+          predicates:
+            - Path=/api/ai/image/**
+        - id: video-service
+          uri: lb://ai-video-service
+          predicates:
+            - Path=/api/video/**
+        - id: payment-service
+          uri: lb://ai-payment-service
+          predicates:
+            - Path=/api/payment/**,/api/pay/**
+        - id: admin-service
+          uri: lb://ai-admin-service
+          predicates:
+            - Path=/api/admin/**
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+logging:
+  level:
+    com.aihub: DEBUG

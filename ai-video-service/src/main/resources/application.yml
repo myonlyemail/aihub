@@ -1,0 +1,60 @@
+server:
+  port: 9008
+
+spring:
+  application:
+    name: ai-video-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3307/aihub?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+logging:
+  level:
+    com.aihub: DEBUG
+
+minio:
+  endpoint: http://127.0.0.1:9000
+  access-key: admin
+  secret-key: admin123456
+
+aihub:
+  provider:
+    runway:
+      api-key: ${RUNWAY_API_KEY:}
+      base-url: ${RUNWAY_BASE_URL:https://api.runwayml.com}
+    kling:
+      access-key: ${KLING_ACCESS_KEY:}
+      secret-key: ${KLING_SECRET_KEY:}
+      base-url: ${KLING_BASE_URL:https://api.klingai.com}
+    hailuo:
+      api-key: ${HAILUO_API_KEY:}
+      base-url: ${HAILUO_BASE_URL:https://api.minimax.chat}
